@@ -10,7 +10,7 @@ package service;
 public class CurrencyConverter {
 
     public static void test() {
-        String API = "https://v6.exchangerate-api.com/v6/18c41e08457e8db7820cd446/latest/COP";
+        String API = "https://v6.exchangerate-api.com/v6/{API_KEY}/latest/COP".replace("{API_KEY}", System.getenv("API_KEY"));
         var response = HttpRequester.get(API);
         System.out.println(response);
     }
